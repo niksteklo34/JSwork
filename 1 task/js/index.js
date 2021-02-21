@@ -118,10 +118,10 @@ for (let i = 1; i <= length ; i++) {
 
 middleAge = sumAge / length;
 
-let textMiddleAge = 'Средний возраст равен: ' + middleAge + ' года';
-let textMaxLangCount = 'Макс. кол-во языков равно: ' + maxLangCount;
-let textCountMen = 'Мужчин: ' + countMen;
-let textCountWomen = 'Женщин: ' + countWomen;
+let textMiddleAge = `Средний возраст равен: ${middleAge} года`;
+let textMaxLangCount = `Макс. кол-во языков равно: ${maxLangCount}`;
+let textCountMen = `Мужчин: ${countMen}`;
+let textCountWomen = `Женщин: ${countWomen}`;
 
 document.getElementById('middleAge').innerText = textMiddleAge;
 document.getElementById('langCount').innerText = textMaxLangCount;
