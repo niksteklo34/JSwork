@@ -12,12 +12,15 @@ function checkValidation () {
         case input.value === '':
             message.innerText = 'Пожалуйста, заполните поле. В поле должно быть минимум 4 символа';
             message.style.cssText = 'color: #8B0000; font-size:24px';
+            break;
         case (Number(input.value)):
             message.innerText = 'Вы ввели цифры';
             message.style.cssText = 'color: orange; font-size:18px';
+            break;
         case (input.value.length <= 4):
             message.innerText = 'Вы ввели меньше 4 букв';
             message.style.cssText = 'color: red; font-size:28px';
+            break;
         default:
             let finalMessage = 'Такой страны нет в Евросоюзе';
             let styleMessageText = 'color: #B22222; font-size:28px';
