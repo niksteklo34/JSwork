@@ -99,7 +99,10 @@ let peoples = [{"id":1,"firstName":"Osmond","surName":"Kieran","sex":"Male","age
 {"id":99,"firstName":"Zackariah","surName":"Kinny","sex":"Male","age":40,"isVegetarian":true,"langCount":12},
 {"id":100,"firstName":"Dorothy","surName":"Cowin","sex":"Female","age":34,"isVegetarian":false,"langCount":8}]
 
-peoples.forEach( value  => localStorage.setItem(value.id, JSON.stringify(value)) );
+localStorage.setItem('Peoples', JSON.stringify(peoples));
+
+let raw = localStorage.getItem('Peoples');
+let peoplesFromLS = JSON.parse(raw);
 
 let length = localStorage.length;
 let maxLangCount = 0;
@@ -107,14 +110,12 @@ let sumAge = 0;
 let countMen = 0;
 let countWomen = 0;
 
-for (let i = 1; i <= length ; i++) {
-    let raw = localStorage.getItem(i);
-    let person = JSON.parse(raw);
-    sumAge = sumAge + person.age;
-    if (person.langCount > maxLangCount) maxLangCount = person.langCount
-    if (person.sex === 'Male') countMen = countMen + 1
-    if (person.sex === 'Female') countWomen = countWomen + 1
-}
+peoplesFromLS.forEach( people => {
+    sumAge = sumAge + people.age;
+    if (people.langCount > maxLangCount) maxLangCount = people.langCount
+    if (people.sex === 'Male') countMen = countMen + 1
+    if (people.sex === 'Female') countWomen = countWomen + 1
+} )
 
 middleAge = sumAge / length;
 
